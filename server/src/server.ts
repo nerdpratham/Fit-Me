@@ -1,18 +1,14 @@
-import mongoose from "mongoose";
-import app from "./app";
+import app from "../app";
+import { connectDB } from "./config/db";
 import { env } from "./config/env";
 
 async function startServer() {
   try {
-    // Connect to MongoDB
-    await mongoose.connect(env.MONGO_URI);
-    console.log("✅ MongoDB connected");
+    await connectDB();
 
-    // Start Express server
     app.listen(env.PORT, () => {
       console.log(`🚀 Server running on http://localhost:${env.PORT}`);
     });
-
   } catch (error) {
     console.error("❌ Failed to start server:", error);
     process.exit(1);
