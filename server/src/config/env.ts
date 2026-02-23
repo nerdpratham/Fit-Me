@@ -13,7 +13,7 @@ function getEnvVariable(key: string): string {
 const mongoUri = getEnvVariable("MONGO_URI");
 if (mongoUri.includes("<db_password>")) {
   console.error(
-    "❌ Replace <db_password> in .env with your actual MongoDB Atlas password"
+    "Replace <db_password> in .env with your actual MongoDB Atlas password"
   );
   process.exit(1);
 }

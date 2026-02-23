@@ -5,11 +5,15 @@ import Footer from "../components/Footer";
 interface LandingPageProps {
   onSignupClick?: () => void;
   onGetStartedClick?: () => void;
+  onGoToNutrition?: () => void;
+  onGoToWorkouts?: () => void;
 }
 
 const LandingPage: React.FC<LandingPageProps> = ({
   onSignupClick,
-  onGetStartedClick,
+  // onGetStartedClick,
+  onGoToNutrition,
+  onGoToWorkouts,
 }) => {
   return (
     <div className="min-h-screen flex flex-col bg-gray-900">
@@ -21,7 +25,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
         <img
           src="/logo.png"
           alt="FitMe"
-          className="h-32 object-contain mb-8"
+          className="h-50 object-contain mb-8"
         />
         <div className="text-center max-w-xl">
           <h1 className="text-4xl font-bold text-white mb-4">
@@ -33,13 +37,33 @@ const LandingPage: React.FC<LandingPageProps> = ({
             simple and powerful platform.
           </p>
 
-          <button
+          {/* <button
             onClick={onGetStartedClick}
             className="px-6 py-3 text-white bg-[#00A3CC] rounded-md font-medium
                        hover:bg-[#008BA3] transition-colors"
           >
             Get Started
-          </button>
+          </button>  */}
+
+          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-sm">
+            <button
+              type="button"
+              onClick={onGoToNutrition}
+              className="px-6 py-3 text-white bg-[#00A3CC] rounded-md font-medium
+                       hover:bg-[#008BA3] transition-colors"
+            >
+              View nutrition plans
+            </button>
+            <span className="hidden sm:inline text-gray-600">•</span>
+            <button
+              type="button"
+              onClick={onGoToWorkouts}
+              className="px-6 py-3 text-white bg-[#00A3CC] rounded-md font-medium
+                       hover:bg-[#008BA3] transition-colors"
+            >
+              Browse workouts
+            </button>
+          </div>
         </div>
       </main>
 

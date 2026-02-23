@@ -29,7 +29,11 @@ const Signup: React.FC<SignupProps> = ({ onBack }) => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-900">
-      <Header onSignupClick={onBack} buttonLabel="Log In" />
+      <Header
+        onSignupClick={onBack}
+        onLogoClick={onBack}
+        buttonLabel="Log In"
+      />
 
       <main className="flex-1 flex flex-col items-center justify-center px-8 py-12">
         <div className="w-full max-w-md">
